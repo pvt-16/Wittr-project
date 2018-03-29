@@ -1,46 +1,34 @@
-# Wittr
-
-This is a silly little demo app for an offline-first course.
-
-You could run the app either using machine dependnecies, or using docker
+# Wittr - Indexed DB
 
 ## Running using local machine
 
-### Installing
+### Installing the indexed db ( creating )
 
 Dependencies:
 
-* [Node.js](https://nodejs.org/en/) v0.12.7 or above
-
-Then check out the project and run:
+* [Server.js](https://github.com/pvt-16/Wittr-project/blob/pvt-idb-branch/server/Server.js) 
 
 ```sh
-npm install
+this._app.get('/idb-test/', (req, res) {
+...
+})
 ```
+Here it is defined that we need to navigate to '/idb-test' to use the idb.js file. We can change it to anything else, eg. '/zxy', and when we navigate to http://localhost:8888/zxy , we will create the idb.
 
-### Running
+### Import
 
 ```sh
-npm run serve
+import idbTestTemplate from './templates/idb-test';
 ```
+Find the file at [idb-test.hbs](https://github.com/pvt-16/Wittr-project/blob/pvt-idb-branch/templates/idb-test.hbs)
 
-### Using the app
+### Source file for Idb
 
-You should now have the app server at [localhost:8888](http://localhost:8888) and the config server at [localhost:8889](http://localhost:8889).
+(https://github.com/pvt-16/Wittr-project/blob/pvt-idb-branch/public/js/idb-test/index.js)
 
-You can also configure the ports:
+This js file runs only when you navigate to /idb-test, as defined above.
 
-```sh
-npm run serve -- --server-port=8000 --config-server-port=8001
-```
-
-## Running using docker
-
-```sh
-docker-compose up
-```
-
-Here also you should have the app server at [localhost:8888](http://localhost:8888) and the config server at [localhost:8889](http://localhost:8889).
+# Original ReadME file contents here : 
 
 You can configure the ports by changing them in `docker-compose.yml` before starting:
 
